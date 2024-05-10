@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+	<html>
+	
+		<head> 
+		
+		<title> Valdevieso - Sign Up Form </title>
+		
+		<style> 
+		
+			body {
+				background-image: url('https://t3.ftcdn.net/jpg/05/33/38/00/360_F_533380042_RWipnOtZP8SaOnLUY2VUpgS7pCOthiS2.jpg');
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			
+			h1,p{
+				font-family: Courier, monospace;
+				text-align: center;	
+			}
+			
+			#nameForSexHeader{
+				text-align: left;
+			}
+			
+			#uname, #emailSpace, #addLocation, #interests, #submitAndResetButton{
+				margin-top: 20px;
+			}
+		
+			#interests{
+				width: 200%;
+			}
+			
+   			input{
+				padding: 10px;
+				margin-left: 10px;
+			}
+			
+			label {
+				padding: 3px;
+			}
+			
+		</style>
+
+		</head>
+		
+		<body>
+		
+			<h1>Learn with us!</h1>
+			<p>Hi there! We are the ABC learning and we are here today to introduce you to do the wonders of the world and the many mysteries lurking in the shadows of our world! To start please register and sign up to make a new account so that we can start our journey together!</p>
+			
+		
+			<form onsubmit = "return outputArea();"> 
+				
+				<div id = "realName"><label for = "nameOfUser"> Your Name: </label>
+				<input type = "text" id = "nameOfUser" name = "nameOfUser" value required></div>
+
+				<div id = "uname"><label for = "userName"> Username: </label>
+				<input type = "text" id = "userName" name = "userName" value required></div>
+				
+				<p id = "nameForSexHeader"> Sex: </p>
+				<input type = "radio" id = "Female" name = "sex" value = "Female">
+				<label for = "Female"> Female </label> </br> 
+				<input type = "radio" id = "Male" name = "sex" value = "Male">
+				<label for = "Male"> Male </label> </br> 
+				<input type = "radio" id = "Prefer Not to Mention" name = "sex" value = "Prefer Not to Mention">
+				<label for = "Prefer Not to Mention"> Prefer Not to Mention</label></br>
+				
+				</br> 
+				
+				<label for = "password"> Password: </label> 
+				<input type = "password" id = "pass" name = "password" value required>
+			
+				<div id = "emailSpace"><label for = "emailAdd"> Email: </label>
+				<input type = "email" id = "emailAdd" name = "emailAdd" value required></div>
+				
+				<div id = "addLocation"><label for = "address"> Address: </label>
+				<input type = "text" id = "address" name = "address" value required></div>
+				
+				<div id = "interests"><label for = "userInterests"> Interests: </label>
+				<input type = "text" id = "userInterests" name = "userInterests" value required> </div>
+				
+				<div id = "submitAndResetButton"> <input type = "submit" value = "Click to Submit!">
+				<input type = "reset" value = "Click to Reset"></div>
+			</form>
+			</br>
+				
+				 
+				
+					<h3>This is the following gathered information: </h3>
+					<h4>Name: <span id = "outName"> </span> </h4>
+					<h4>Username: <span id = "outUser"> </span> </h4>
+					<h4>Sex: <span id = "outSex"> </span> </h4>
+					<h4>Password: <span id = "outPass"> </span> </h4> 
+					<h4>Email: <span id = "outEmail"> </span> </h4>
+					<h4>Address: <span id = "outAdress"> </span> </h4> 
+					<h4>Interests: <span id = "outInterests"> </span> </h4>
+				
+				
+				
+			<script>
+				
+				function outputArea(){
+				
+					var name = document.getElementById("nameOfUser").value;
+					var username = document.getElementById("userName").value;
+					var password = document.getElementById("pass").value;
+					var email = document.getElementById("emailAdd").value;
+					var address = document.getElementById("address").value;
+					var interests = document.getElementById("userInterests").value;
+				
+					var sexValue = document.querySelector('input[name="sex"]:checked');
+					var sex = sexValue ? sexValue.value : "Not Specified";
+					
+					var outName = document.getElementById("outName");
+					var outUser = document.getElementById("outUser");
+					var outSex = document.getElementById("outSex");
+					var outPass = document.getElementById("outPass");
+					var outEmail = document.getElementById("outEmail");
+					var outAdress = document.getElementById("outAdress");
+					var outInterests = document.getElementById("outInterests");
+
+					outName.innerHTML = name;
+					outUser.innerHTML = username;
+					outSex.innerHTML = sex;
+					outPass.innerHTML = password;
+					outEmail.innerHTML = email;
+					outAdress.innerHTML = address;
+					outInterests.innerHTML = interests;
+					 
+
+					return false;
+
+				
+				}
+				
+			</script>
+		
+		</body>
+	
+	</html>
+	
